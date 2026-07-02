@@ -1,0 +1,1388 @@
+C:\Users\LJENG>mongosh
+Current Mongosh Log ID: 6a3cc594b25f2320042f913d
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.3
+Using MongoDB:          6.0.8
+Using Mongosh:          1.10.3
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-06-25T11:33:32.513+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+Exam           72.00 KiB
+LJ2k26         96.00 KiB
+MongoDB1      288.00 KiB
+Tasks          72.00 KiB
+UserDataProj   40.00 KiB
+admin          40.00 KiB
+config         72.00 KiB
+hello         152.00 KiB
+kunal          80.00 KiB
+lec2          168.00 KiB
+local         168.00 KiB
+react           8.00 KiB
+smit1          40.00 KiB
+task1          56.00 KiB
+test1          60.00 KiB
+user           72.00 KiB
+viren         612.00 KiB
+test> use ljub2
+switched to db ljub2
+ljub2> db.createCollection
+[Function: createCollection] AsyncFunction {
+  apiVersions: [ 1, Infinity ],
+  returnsPromise: true,
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  returnType: { type: 'unknown', attributes: {} },
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+
+ljub2> db.createCollection("students")
+{ ok: 1 }
+ljub2> db.myproducts.insertMany([{name:'tshirt',price:800,qty:10,category:'fashion'},{name:'sofa',price:45000,qty:5,category:'home'},{name:'tv',price:57000,qty:3,category:'electronice'},{name:'shirt',price:2800,qty:8,category:'fashion'},{name:'table',price:13000,qty:5,category:'home'},{name:'mobile',pricr:37000,qty:7,category:'electronice'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6a3cc8e6b25f2320042f913e"),
+    '1': ObjectId("6a3cc8e6b25f2320042f913f"),
+    '2': ObjectId("6a3cc8e6b25f2320042f9140"),
+    '3': ObjectId("6a3cc8e6b25f2320042f9141"),
+    '4': ObjectId("6a3cc8e6b25f2320042f9142"),
+    '5': ObjectId("6a3cc8e6b25f2320042f9143")
+  }
+}
+
+ljub2> db.myproducts.updateOne({name:'mobile'},{$set:{price:37000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+ljub2> db.myproducts.updateOne({category:'electronice',name:'washingmachine'},{$set:{price:34000}},{upsert:true})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6a3ccca35a775c78d98347bb"),
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 1
+}
+
+ljub2> {name:"tshirts",price:800,qty:10,category:"fashion"}
+
+
+
+C:\Users\LJENG>mongosh
+Current Mongosh Log ID: 6a3cc594b25f2320042f913d
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.3
+Using MongoDB:          6.0.8
+Using Mongosh:          1.10.3
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-06-25T11:33:32.513+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+Exam           72.00 KiB
+LJ2k26         96.00 KiB
+MongoDB1      288.00 KiB
+Tasks          72.00 KiB
+UserDataProj   40.00 KiB
+admin          40.00 KiB
+config         72.00 KiB
+hello         152.00 KiB
+kunal          80.00 KiB
+lec2          168.00 KiB
+local         168.00 KiB
+react           8.00 KiB
+smit1          40.00 KiB
+task1          56.00 KiB
+test1          60.00 KiB
+user           72.00 KiB
+viren         612.00 KiB
+test> use ljub2
+switched to db ljub2
+ljub2> db.createCollection
+[Function: createCollection] AsyncFunction {
+  apiVersions: [ 1, Infinity ],
+  returnsPromise: true,
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  returnType: { type: 'unknown', attributes: {} },
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+ljub2> db.createCollection("students")
+{ ok: 1 }
+ljub2> db.myproducts.insertMany([{name:'tshirt',price:800,qty:10,category:'fashion'},{name:'sofa',price:45000,qty:5,category:'home'},{name:'tv',price:57000,qty:3,category:'electronice'},{name:'shirt',price:2800,qty:8,category:'fashion'},{name:'table',price:13000,qty:5,category:'home'},{name:'mobile',pricr:37000,qty:7,category:'electronice'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6a3cc8e6b25f2320042f913e"),
+    '1': ObjectId("6a3cc8e6b25f2320042f913f"),
+    '2': ObjectId("6a3cc8e6b25f2320042f9140"),
+    '3': ObjectId("6a3cc8e6b25f2320042f9141"),
+    '4': ObjectId("6a3cc8e6b25f2320042f9142"),
+    '5': ObjectId("6a3cc8e6b25f2320042f9143")
+  }
+}
+ljub2> db.myproducts.updateOne({name:'mobile'},{$set:{price:37000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ljub2> db.myproducts.updateOne({category:'electronice',name:'washingmachine'},{$set:{price:34000}},{upsert:true})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6a3ccca35a775c78d98347bb"),
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 1
+}
+ljub2> {name:"tshirts",price:800,qty:10,category:"fashion"}
+
+
+
+C:\Users\LJENG>mongosh
+Current Mongosh Log ID: 6a3cc594b25f2320042f913d
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.3
+Using MongoDB:          6.0.8
+Using Mongosh:          1.10.3
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2026-06-25T11:33:32.513+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+Exam           72.00 KiB
+LJ2k26         96.00 KiB
+MongoDB1      288.00 KiB
+Tasks          72.00 KiB
+UserDataProj   40.00 KiB
+admin          40.00 KiB
+config         72.00 KiB
+hello         152.00 KiB
+kunal          80.00 KiB
+lec2          168.00 KiB
+local         168.00 KiB
+react           8.00 KiB
+smit1          40.00 KiB
+task1          56.00 KiB
+test1          60.00 KiB
+user           72.00 KiB
+viren         612.00 KiB
+test> use ljub2
+switched to db ljub2
+ljub2> db.createCollection
+[Function: createCollection] AsyncFunction {
+  apiVersions: [ 1, Infinity ],
+  returnsPromise: true,
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  returnType: { type: 'unknown', attributes: {} },
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+ljub2> db.createCollection("students")
+{ ok: 1 }
+ljub2> db.myproducts.insertMany([{name:'tshirt',price:800,qty:10,category:'fashion'},{name:'sofa',price:45000,qty:5,category:'home'},{name:'tv',price:57000,qty:3,category:'electronice'},{name:'shirt',price:2800,qty:8,category:'fashion'},{name:'table',price:13000,qty:5,category:'home'},{name:'mobile',pricr:37000,qty:7,category:'electronice'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6a3cc8e6b25f2320042f913e"),
+    '1': ObjectId("6a3cc8e6b25f2320042f913f"),
+    '2': ObjectId("6a3cc8e6b25f2320042f9140"),
+    '3': ObjectId("6a3cc8e6b25f2320042f9141"),
+    '4': ObjectId("6a3cc8e6b25f2320042f9142"),
+    '5': ObjectId("6a3cc8e6b25f2320042f9143")
+  }
+}
+ljub2> db.myproducts.updateOne({name:'mobile'},{$set:{price:37000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ljub2> db.myproducts.updateOne({category:'electronice',name:'washingmachine'},{$set:{price:34000}},{upsert:true})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6a3ccca35a775c78d98347bb"),
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 1
+}
+ljub2> {name:"tshirts",price:800,qty:10,category:"fashion"}
+
+
+
+ljub2> db.myproducts.updateMany({qty:5},{$unset:{price:'0',category:1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+ljub2>
+
+ljub2> db.myproducts.updateMany({},{$rename:{'name':'pname','category':'cat'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+ljub2> db.myproducts.updateMany({},{$inc:{qty:2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+ljub2> db.myproducts.updateMany({qty:12},{$inc:{qty:-5}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ljub2> db.myproducts.updateMany({price:800},{$mul:{price:1.2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+ljub2> db.myproducts.updateMany({},{$mul:{price:0.8}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 7,
+  upsertedCount: 0
+}
+ljub2>
+
+use ljub2
+switched to db ljub2
+db.myproducts.updateMany({},{$unset:{'pricr':'0'}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 7,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.myproducts.find({price:{$eq:2240}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+db.myproducts.find({price:{$ne:2240}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913e"),
+  price: 768,
+  qty: 7,
+  cat: 'fashion',
+  pname: 'tshirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913f"),
+  qty: 7,
+  pname: 'sofa',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9140"),
+  price: 45600,
+  qty: 5,
+  cat: 'electronice',
+  pname: 'tv'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9142"),
+  qty: 7,
+  pname: 'table',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9143"),
+  qty: 9,
+  price: 29600,
+  cat: 'electronice',
+  pname: 'mobile'
+}
+{
+  _id: ObjectId("6a3ccca35a775c78d98347bb"),
+  price: 27200,
+  cat: 'electronice',
+  pname: 'washingmachine',
+  qty: 2
+}
+db.myproducts.find({price:{$lt:2240}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913e"),
+  price: 768,
+  qty: 7,
+  cat: 'fashion',
+  pname: 'tshirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913f"),
+  qty: 7,
+  pname: 'sofa',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9142"),
+  qty: 7,
+  pname: 'table',
+  price: 0
+}
+db.myproducts.find({price:{$lte:2240}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913e"),
+  price: 768,
+  qty: 7,
+  cat: 'fashion',
+  pname: 'tshirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913f"),
+  qty: 7,
+  pname: 'sofa',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9142"),
+  qty: 7,
+  pname: 'table',
+  price: 0
+}
+db.myproducts.find({price:{$gte:2240}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9140"),
+  price: 45600,
+  qty: 5,
+  cat: 'electronice',
+  pname: 'tv'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9143"),
+  qty: 9,
+  price: 29600,
+  cat: 'electronice',
+  pname: 'mobile'
+}
+{
+  _id: ObjectId("6a3ccca35a775c78d98347bb"),
+  price: 27200,
+  cat: 'electronice',
+  pname: 'washingmachine',
+  qty: 2
+}
+db.myproducts.find({price:{$gt:2240}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9140"),
+  price: 45600,
+  qty: 5,
+  cat: 'electronice',
+  pname: 'tv'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9143"),
+  qty: 9,
+  price: 29600,
+  cat: 'electronice',
+  pname: 'mobile'
+}
+{
+  _id: ObjectId("6a3ccca35a775c78d98347bb"),
+  price: 27200,
+  cat: 'electronice',
+  pname: 'washingmachine',
+  qty: 2
+}
+db.myproducts.find({qty:{$in:[5,10]}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9140"),
+  price: 45600,
+  qty: 5,
+  cat: 'electronice',
+  pname: 'tv'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+db.myproducts.find({qty:{$nin:[5,10]}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913e"),
+  price: 768,
+  qty: 7,
+  cat: 'fashion',
+  pname: 'tshirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913f"),
+  qty: 7,
+  pname: 'sofa',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9142"),
+  qty: 7,
+  pname: 'table',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9143"),
+  qty: 9,
+  price: 29600,
+  cat: 'electronice',
+  pname: 'mobile'
+}
+{
+  _id: ObjectId("6a3ccca35a775c78d98347bb"),
+  price: 27200,
+  cat: 'electronice',
+  pname: 'washingmachine',
+  qty: 2
+}
+db.myproducts.find({qty:{$nin:[5,7,10]}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9143"),
+  qty: 9,
+  price: 29600,
+  cat: 'electronice',
+  pname: 'mobile'
+}
+{
+  _id: ObjectId("6a3ccca35a775c78d98347bb"),
+  price: 27200,
+  cat: 'electronice',
+  pname: 'washingmachine',
+  qty: 2
+}
+db.myproducts.find({price:{$not;{$gt:3000}}})
+Error: clone(t={}){const r=t.loc||{};return e({loc:new Position("line"in r?r.line:this.loc.line,"column"in r?r.column:...<omitted>...)} could not be cloned.
+db.myproducts.find({price:{$not:{$gt:3000}}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913e"),
+  price: 768,
+  qty: 7,
+  cat: 'fashion',
+  pname: 'tshirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913f"),
+  qty: 7,
+  pname: 'sofa',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9142"),
+  qty: 7,
+  pname: 'table',
+  price: 0
+}
+db.myproducts.find({qty:{$not:{$in:[5,7]}}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9143"),
+  qty: 9,
+  price: 29600,
+  cat: 'electronice',
+  pname: 'mobile'
+}
+{
+  _id: ObjectId("6a3ccca35a775c78d98347bb"),
+  price: 27200,
+  cat: 'electronice',
+  pname: 'washingmachine',
+  qty: 2
+}
+db.myproducts.find({qty:{$not:{$nin:[5,7]}}})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913e"),
+  price: 768,
+  qty: 7,
+  cat: 'fashion',
+  pname: 'tshirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913f"),
+  qty: 7,
+  pname: 'sofa',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9140"),
+  price: 45600,
+  qty: 5,
+  cat: 'electronice',
+  pname: 'tv'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9142"),
+  qty: 7,
+  pname: 'table',
+  price: 0
+}
+db.myproducts.find({$and:[{price:2240},{pname:'shirt'}]})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+db.myproducts.find({$or:[{price:{$gt:50000}},{cat:'home'}]})
+db.myproducts.find({$or:[{price:{$gt:50000}},{cat:'fashion'}]})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913e"),
+  price: 768,
+  qty: 7,
+  cat: 'fashion',
+  pname: 'tshirt'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9141"),
+  price: 2240,
+  qty: 10,
+  cat: 'fashion',
+  pname: 'shirt'
+}
+db.myproducts.find({$nor:[{price:{$gt:50000}},{cat:'fashion'}]})
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f913f"),
+  qty: 7,
+  pname: 'sofa',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9140"),
+  price: 45600,
+  qty: 5,
+  cat: 'electronice',
+  pname: 'tv'
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9142"),
+  qty: 7,
+  pname: 'table',
+  price: 0
+}
+{
+  _id: ObjectId("6a3cc8e6b25f2320042f9143"),
+  qty: 9,
+  price: 29600,
+  cat: 'electronice',
+  pname: 'mobile'
+}
+
+db.myproducts.insertMany([{name:"abc",age:13,standard:6,perc:80},{name:"def",age:15,standard:8,perc:90},{name:"ghi",age:10,standard:3,perc:75},{name:"pqr",age:5,standard:1,perc:89},{name:"xyz",age:17,standard:12,perc:97}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6a3cdae538de1611d729fec0"),
+    '1': ObjectId("6a3cdae538de1611d729fec1"),
+    '2': ObjectId("6a3cdae538de1611d729fec2"),
+    '3': ObjectId("6a3cdae538de1611d729fec3"),
+    '4': ObjectId("6a3cdae538de1611d729fec4")
+  }
+}
+db.myproducts.find({age:{$gt:5}})
+{
+  _id: ObjectId("6a3cdae538de1611d729fec0"),
+  name: 'abc',
+  age: 13,
+  standard: 6,
+  perc: 80
+}
+{
+  _id: ObjectId("6a3cdae538de1611d729fec1"),
+  name: 'def',
+  age: 15,
+  standard: 8,
+  perc: 90
+}
+{
+  _id: ObjectId("6a3cdae538de1611d729fec2"),
+  name: 'ghi',
+  age: 10,
+  standard: 3,
+  perc: 75
+}
+{
+  _id: ObjectId("6a3cdae538de1611d729fec4"),
+  name: 'xyz',
+  age: 17,
+  standard: 12,
+  perc: 97
+}
+db.myproducts.find({standard:{$gt:12}},{$inc:{standard:1}})
+MongoServerError: FieldPath field names may not start with '$'. Consider using $getField or $setField.
+db.myproducts.updateMany({standard:{$gt:12}},{$inc:{standard:1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.myproducts.updateMany({standard:{$lt:12}},{$inc:{standard:1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+db.myproducts.count()
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+12
+db.myproducts.countDocuments({price:{$lt:30000}})
+6
+db.myproducts.find({price:{$lt:30000}}).count()
+6
+db.myproducts.find({},{name:1,price:1,_id:0}).sort({price:-1})
+{
+  price: 45600
+}
+{
+  price: 29600
+}
+{
+  price: 27200
+}
+{
+  price: 2240
+}
+{
+  price: 768
+}
+{
+  price: 0
+}
+{
+  price: 0
+}
+{
+  name: 'abc'
+}
+{
+  name: 'def'
+}
+{
+  name: 'ghi'
+}
+{
+  name: 'pqr'
+}
+{
+  name: 'xyz'
+}
+db.myproducts.find({},{pname:1,price:1,_id:0}).sort({price:-1})
+{
+  price: 45600,
+  pname: 'tv'
+}
+{
+  price: 29600,
+  pname: 'mobile'
+}
+{
+  price: 27200,
+  pname: 'washingmachine'
+}
+{
+  price: 2240,
+  pname: 'shirt'
+}
+{
+  price: 768,
+  pname: 'tshirt'
+}
+{
+  pname: 'sofa',
+  price: 0
+}
+{
+  pname: 'table',
+  price: 0
+}
+{}
+{}
+{}
+{}
+{}
+db.myproducts.find({},{name:1,_id:0}).sort({age:-1}).limit(1)
+{
+  name: 'xyz'
+}
+db.myproducts.find({},{name:1,_id:0}).sort({age:-1}).limit(1).skip(1)
+{
+  name: 'def'
+}
+db.myproducts.find({},{name:1,_id:0}).sort({age:1}).limit(1).skip(1)
+{}
+db.myproducts.find({},{name:1,_id:0}).sort({age:1})
+{}
+{}
+{}
+{}
+{}
+{}
+{}
+{
+  name: 'pqr'
+}
+{
+  name: 'ghi'
+}
+{
+  name: 'abc'
+}
+{
+  name: 'def'
+}
+{
+  name: 'xyz'
+}
+db.myproducts.find({},{name:1,_id:0}).sort({age:1}).limit(1)
+{}
+db.myproducts.find({},{name:1,_id:0}).sort({age:1}).limit(1).skip(1)
+{}
+ljub2
+Selection deleted
+
+
+
+
+
+
+use ljub2
+switched to db ljub2
+db.employees.insertMany([{_id: 1,name: "Eric",age: 30,position: "Full Stack Developer",salary: 60000},
+{_id: 2,name: "Erica",age: 35,position: "Intern",salary: 8000},
+{_id: 3,name: "Erical",age: 40,position: "UX/UI Designer",salary: 56000},
+{_id: 4,name: "treric7",age: 37,position: "Team Leader",salary: 85000},
+{_id: 5,name: "Eliza",age: 25,position: "Software Developer",salary: 45000},
+{_id: 6,name: "Trian",age: 29,position: "Data Scientist",salary: 75000},
+{_id: 7,name: "Elizan",age: 25,position: "Full Stack Developer",salary: 49000}]
+)
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6,
+    '6': 7
+  }
+}
+db.employees.find()
+{
+  _id: 1,
+  name: 'Eric',
+  age: 30,
+  position: 'Full Stack Developer',
+  salary: 60000
+}
+{
+  _id: 2,
+  name: 'Erica',
+  age: 35,
+  position: 'Intern',
+  salary: 8000
+}
+{
+  _id: 3,
+  name: 'Erical',
+  age: 40,
+  position: 'UX/UI Designer',
+  salary: 56000
+}
+{
+  _id: 4,
+  name: 'treric7',
+  age: 37,
+  position: 'Team Leader',
+  salary: 85000
+}
+{
+  _id: 5,
+  name: 'Eliza',
+  age: 25,
+  position: 'Software Developer',
+  salary: 45000
+}
+{
+  _id: 6,
+  name: 'Trian',
+  age: 29,
+  position: 'Data Scientist',
+  salary: 75000
+}
+{
+  _id: 7,
+  name: 'Elizan',
+  age: 25,
+  position: 'Full Stack Developer',
+  salary: 49000
+}
+db.employees.find({position:"Full Stack Developer"})
+{
+  _id: 1,
+  name: 'Eric',
+  age: 30,
+  position: 'Full Stack Developer',
+  salary: 60000
+}
+{
+  _id: 7,
+  name: 'Elizan',
+  age: 25,
+  position: 'Full Stack Developer',
+  salary: 49000
+}
+db.employees.find({age:{$gte:25,$lt:40}},{name:1,_id:0})
+{
+  name: 'Eric'
+}
+{
+  name: 'Erica'
+}
+{
+  name: 'treric7'
+}
+{
+  name: 'Eliza'
+}
+{
+  name: 'Trian'
+}
+{
+  name: 'Elizan'
+}
+db.employees.find({},{name:1,_id:0}).sort({salary:-1}).limit(1)
+{
+  name: 'treric7'
+}
+db.employees.find({salary:{$gt:50000}},{name:1,_id:0})
+{
+  name: 'Eric'
+}
+{
+  name: 'Erical'
+}
+{
+  name: 'treric7'
+}
+{
+  name: 'Trian'
+}
+db.employees.find({salary:{$gt:50000}},{name:1,_id:0}).limit
+[Function: limit] {
+  returnType: 'Cursor',
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  apiVersions: [ 0, Infinity ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  returnsPromise: false,
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+db.employees.find({salary:{$gt:50000}},{name:1,_id:0}).count
+[Function: count] AsyncFunction {
+  deprecated: true,
+  returnsPromise: true,
+  serverVersions: [ '0.0.0', '4.0.0' ],
+  apiVersions: [ 0, Infinity ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  returnType: { type: 'unknown', attributes: {} },
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+db.employees.find({salary:{$gt:50000}},{name:1,_id:0}).count()
+4
+db.employees.find({$and:[{$or:[{position:"Software Developer"},{position:"Full Stack Developer"}]},{age:{$lt:30}}]})
+{
+  _id: 5,
+  name: 'Eliza',
+  age: 25,
+  position: 'Software Developer',
+  salary: 45000
+}
+{
+  _id: 7,
+  name: 'Elizan',
+  age: 25,
+  position: 'Full Stack Developer',
+  salary: 49000
+}
+db.employees.updateMany({salary:{$lt:50000},{$inc:{salary:0.1}}},{name:1,_id:0})
+Error: clone(t={}){const r=t.loc||{};return e({loc:new Position("line"in r?r.line:this.loc.line,"column"in r?r.column:...<omitted>...)} could not be cloned.
+db.employees.updateMany({salary:{$lt:50000}},{$inc:{salary:0.1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+db.employees.updateOne({salary:{$lt:50000}},{$mul:{salary:0.1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.employees.updateOne({salary:{$lt:50000}},{$mul:{salary:1.1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.ljstudents.insertMany([{name:'A',city:'Ahmedabad',mark:85},{name:'B',city:'Surat',mark:70},{name:'C',city:'Ahmedabad',mark:90},{name:'D',city:'Surat',mark:80},{name:'E',city:'Rajkot',mark:85}])
+
+Aggregation:
+
+collection
+ ^
+ |
+$match
+ ^
+ |
+$group ->$sum,$avg,$max,$min
+ ^
+ |
+$sort
+ ^
+ |
+$project
+
+
+db.ljstudents.aggregate([{$group:{_id:"$city",total:{$sum:1}}}])
+{
+  _id: 'Ahmedabad',
+  total: 2
+}
+{
+  _id: 'Rajkot',
+  total: 1
+}
+{
+  _id: 'Surat',
+  total: 2
+}
+db.ljstudents.aggregate([{$match:{city:"Surat"}}])
+{
+  _id: ObjectId("6a41ee3299f1fa5f4f49b2e6"),
+  name: 'B',
+  city: 'Surat',
+  mark: 70
+}
+{
+  _id: ObjectId("6a41ee3299f1fa5f4f49b2e8"),
+  name: 'D',
+  city: 'Surat',
+  mark: 80
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}}])
+{
+  _id: 'Surat',
+  avgmark: 75
+}
+{
+  _id: 'Ahmedabad',
+  avgmark: 87.5
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$max:'$mark'}}}])
+{
+  _id: 'Ahmedabad',
+  avgmark: 90
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85
+}
+{
+  _id: 'Surat',
+  avgmark: 80
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$min:'$mark'}}}])
+{
+  _id: 'Surat',
+  avgmark: 70
+}
+{
+  _id: 'Ahmedabad',
+  avgmark: 85
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$sum:'$mark'}}}])
+{
+  _id: 'Ahmedabad',
+  avgmark: 175
+}
+{
+  _id: 'Surat',
+  avgmark: 150
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85
+}
+db.ljstudents.aggregate([{$sort:{mark:-1}}])
+{
+  _id: ObjectId("6a41ee3299f1fa5f4f49b2e7"),
+  name: 'C',
+  city: 'Ahmedabad',
+  mark: 90
+}
+{
+  _id: ObjectId("6a41ee3299f1fa5f4f49b2e5"),
+  name: 'A',
+  city: 'Ahmedabad',
+  mark: 85
+}
+{
+  _id: ObjectId("6a41ee3299f1fa5f4f49b2e9"),
+  name: 'E',
+  city: 'Rajkot',
+  mark: 85
+}
+{
+  _id: ObjectId("6a41ee3299f1fa5f4f49b2e8"),
+  name: 'D',
+  city: 'Surat',
+  mark: 80
+}
+{
+  _id: ObjectId("6a41ee3299f1fa5f4f49b2e6"),
+  name: 'B',
+  city: 'Surat',
+  mark: 70
+}
+db.ljstudents.aggregate([{$project:{name:1,mark:1,_id:0}}])
+{
+  name: 'A',
+  mark: 85
+}
+{
+  name: 'B',
+  mark: 70
+}
+{
+  name: 'C',
+  mark: 90
+}
+{
+  name: 'D',
+  mark: 80
+}
+{
+  name: 'E',
+  mark: 85
+}
+
+
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}},{$sort:{avgmark:-1}},{$project:{name:1}}])
+{
+  _id: 'Ahmedabad'
+}
+{
+  _id: 'Rajkot'
+}
+{
+  _id: 'Surat'
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}},{$sort:{avgmark:-1}},{$project:{name:1,avgmark:1}}])
+{
+  _id: 'Ahmedabad',
+  avgmark: 87.5
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85
+}
+{
+  _id: 'Surat',
+  avgmark: 75
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}},{$sort:{avgmark:-1}},{$project:{name:1,avgmark:1,_id:0}}])
+{
+  avgmark: 87.5
+}
+{
+  avgmark: 85
+}
+{
+  avgmark: 75
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}},{$sort:{avgmark:-1}},{$project:{name:1,avgmark:1}}])
+{
+  _id: 'Ahmedabad',
+  avgmark: 87.5
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85
+}
+{
+  _id: 'Surat',
+  avgmark: 75
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}},{$sort:{avgmark:-1}},{$project:{city:1,avgmark:1}}])
+{
+  _id: 'Ahmedabad',
+  avgmark: 87.5
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85
+}
+{
+  _id: 'Surat',
+  avgmark: 75
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}},{$sort:{avgmark:-1}},{$project:{city:'$_id',avgmark:1}}])
+{
+  _id: 'Ahmedabad',
+  avgmark: 87.5,
+  city: 'Ahmedabad'
+}
+{
+  _id: 'Rajkot',
+  avgmark: 85,
+  city: 'Rajkot'
+}
+{
+  _id: 'Surat',
+  avgmark: 75,
+  city: 'Surat'
+}
+db.ljstudents.aggregate([{$group:{_id:"$city",avgmark:{$avg:'$mark'}}},{$sort:{avgmark:-1}},{$project:{city:'$_id',avgmark:'$avgmark',_id:0}}])
+{
+  city: 'Ahmedabad',
+  avgmark: 87.5
+}
+{
+  city: 'Rajkot',
+  avgmark: 85
+}
+
+
+db.orders.insertMany([
+{_id:1, customer:"Nidhi", product:"Laptop", category:"Electronics", amount:55000},
+{_id:2, customer:"Rahul", product:"Mobile", category:"Electronics", amount:25000},
+{_id:3, customer:"Priya", product:"Shoes", category:"Fashion", amount:3000},
+{_id:4, customer:"Amit", product:"T-Shirt", category:"Fashion", amount:1500},
+{_id:5, customer:"Neha", product:"Refrigerator", category:"Electronics", amount:40000},
+{_id:6, customer:"Karan", product:"Watch", category:"Fashion", amount:5000},
+{_id:7, customer:"Riya", product:"Microwave", category:"Electronics", amount:12000}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': 1,
+    '1': 2,
+    '2': 3,
+    '3': 4,
+    '4': 5,
+    '5': 6,
+    '6': 7
+  }
+}
+db.orders.aggregate([{$group:{_id:'category',avgamount:{$avg:'$amount'}}}])
+{
+  _id: 'category',
+  avgamount: 20214.285714285714
+}
+db.orders.aggregate([{$group:{_id:'$category',avgamount:{$avg:'$amount'}}}])
+{
+  _id: 'Fashion',
+  avgamount: 3166.6666666666665
+}
+{
+  _id: 'Electronics',
+  avgamount: 33000
+}
+db.orders.aggregate([{$group:{_id:'$category',avgamount:{$avg:'$amount'}}},{$sort:{avgamount:-1}}])
+{
+  _id: 'Electronics',
+  avgamount: 33000
+}
+{
+  _id: 'Fashion',
+  avgamount: 3166.6666666666665
+}
+db.orders.aggregate([{$group:{_id:'$category',avgamount:{$avg:'$amount'}}},{$sort:{avgamount:-1}},{$project:{category:'$_id',avgamount:1}}])
+{
+  _id: 'Electronics',
+  avgamount: 33000,
+  category: 'Electronics'
+}
+{
+  _id: 'Fashion',
+  avgamount: 3166.6666666666665,
+  category: 'Fashion'
+}
+db.orders.aggregate([{$group:{_id:'$category',avgamount:{$avg:'$amount'}}},{$sort:{avgamount:-1}},{$project:{category:'$_id',avgamount:1,_id:0}}])
+{
+  avgamount: 33000,
+  category: 'Electronics'
+}
+{
+  avgamount: 3166.6666666666665,
+  category: 'Fashion'
+}
+db.orders.aggregate([{$group:{_id:'$category',sumamount:{$sum:'$amount'}}},{$sort:{sumamount:-1}},{$project:{category:'$_id',sumamount:1,_id:0}}])
+{
+  sumamount: 132000,
+  category: 'Electronics'
+}
+{
+  sumamount: 9500,
+  category: 'Fashion'
+}
+db.orders.aggregate([{$group:{_id:'$category',sumamount:{$sum:1}}},{$project:{category:'$_id',sumamount:1,_id:0}}])
+{
+  sumamount: 4,
+  category: 'Electronics'
+}
+{
+  sumamount: 3,
+  category: 'Fashion'
+}
+db.orders.aggregate([{$group:{_id:'$category',sumamount:{$min:1}}},{$project:{category:'$_id',sumamount:1,_id:0}}])
+{
+  sumamount: 1,
+  category: 'Electronics'
+}
+{
+  sumamount: 1,
+  category: 'Fashion'
+}
+db.orders.aggregate([{$group:{_id:'$category',maxamount:{$max:'$amount'}}},{$sort:{maxamount:-1}},{$project:{category:'$_id',maxamount:1,_id:0}}])
+{
+  maxamount: 55000,
+  category: 'Electronics'
+}
+{
+  maxamount: 5000,
+  category: 'Fashion'
+}
+db.orders.aggregate([{$group:{_id:'$category',minamount:{$min:'$amount'}}},{$sort:{minamount:-1}},{$project:{category:'$_id',minamount:1,_id:0}}])
+{
+  minamount: 12000,
+  category: 'Electronics'
+}
+{
+  minamount: 1500,
+  category: 'Fashion'
+}
+
+
+db.orders.aggregate([{$match:{amount:{$gt:10000}}},{$group:{_id:'$category',total:{$sum:'$amount'},maxamount:{$max:'$amount'}}},{$sort:{total:1}},{$project:{total:"$total",category:'$_id',maxamount:1}}])
+
+{
+  _id: 'Electronics',
+  maxamount: 55000,
+  total: 132000,
+  category: 'Electronics'
+}
+
+{
+  _id: 'Electronics',
+  maxamount: 55000,
+  total: 132000,
+  category: 'Electronics'
+}
