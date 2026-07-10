@@ -1,0 +1,714 @@
+db.regex.insertMany([{name:'ABC',age:20,branch:'CSE',mark:20},{name:'Test',age:21,branch:'CE',mark:15},{name:'Test123',age:20,branch:'CSE',mark:22},{name:'Testing',age:21,branch:'CSE',mark:25},{name:'123Test',age:19,branch:'CE',mark:18},{name:'Ansh',age:19,branch:'CSE',mark:20},{name:'Nency12',age:20,branch:'IT',mark:15},{name:'NOP',age:21,branch:'CE',mark:12}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6a4609b319ec2c9234dd711a"),
+    '1': ObjectId("6a4609b319ec2c9234dd711b"),
+    '2': ObjectId("6a4609b319ec2c9234dd711c"),
+    '3': ObjectId("6a4609b319ec2c9234dd711d"),
+    '4': ObjectId("6a4609b319ec2c9234dd711e"),
+    '5': ObjectId("6a4609b319ec2c9234dd711f"),
+    '6': ObjectId("6a4609b319ec2c9234dd7120"),
+    '7': ObjectId("6a4609b319ec2c9234dd7121")
+  }
+}
+db.regex.find({name:{$regex:/test/}})
+db.regex.find({name:{$regex:/test/i}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711b"),
+  name: 'Test',
+  age: 21,
+  branch: 'CE',
+  mark: 15
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711c"),
+  name: 'Test123',
+  age: 20,
+  branch: 'CSE',
+  mark: 22
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711d"),
+  name: 'Testing',
+  age: 21,
+  branch: 'CSE',
+  mark: 25
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711e"),
+  name: '123Test',
+  age: 19,
+  branch: 'CE',
+  mark: 18
+}
+db.regex.find({name:{$regex:/^test/i}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711b"),
+  name: 'Test',
+  age: 21,
+  branch: 'CE',
+  mark: 15
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711c"),
+  name: 'Test123',
+  age: 20,
+  branch: 'CSE',
+  mark: 22
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711d"),
+  name: 'Testing',
+  age: 21,
+  branch: 'CSE',
+  mark: 25
+}
+db.regex.find({name:{$regex:/test$/}})
+db.regex.find({name:{$regex:/test$/i}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711b"),
+  name: 'Test',
+  age: 21,
+  branch: 'CE',
+  mark: 15
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711e"),
+  name: '123Test',
+  age: 19,
+  branch: 'CE',
+  mark: 18
+}
+db.regex.find({name:{$regex:/^test$/i}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711b"),
+  name: 'Test',
+  age: 21,
+  branch: 'CE',
+  mark: 15
+}
+db.regex.find({name:{$regex:/[0-9]/}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711c"),
+  name: 'Test123',
+  age: 20,
+  branch: 'CSE',
+  mark: 22
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711e"),
+  name: '123Test',
+  age: 19,
+  branch: 'CE',
+  mark: 18
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd7120"),
+  name: 'Nency12',
+  age: 20,
+  branch: 'IT',
+  mark: 15
+}
+db.regex.find({name:{$regex:/^[0-9]/}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711e"),
+  name: '123Test',
+  age: 19,
+  branch: 'CE',
+  mark: 18
+}
+db.regex.find({name:{$regex:/[0-9]$/}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711c"),
+  name: 'Test123',
+  age: 20,
+  branch: 'CSE',
+  mark: 22
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd7120"),
+  name: 'Nency12',
+  age: 20,
+  branch: 'IT',
+  mark: 15
+}
+db.regex.find({name:{$regex:/^[0-9]$/}})
+db.regex.find({name:{$regex:/^[0-9]*$/}})
+db.regex.find({name:{$regex:/^[A-Za-z]{3,5}$/}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711a"),
+  name: 'ABC',
+  age: 20,
+  branch: 'CSE',
+  mark: 20
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711b"),
+  name: 'Test',
+  age: 21,
+  branch: 'CE',
+  mark: 15
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711f"),
+  name: 'Ansh',
+  age: 19,
+  branch: 'CSE',
+  mark: 20
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd7121"),
+  name: 'NOP',
+  age: 21,
+  branch: 'CE',
+  mark: 12
+}
+db.regex.find({name:{$regex:/^[A-Z].*[0-9]$/}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711c"),
+  name: 'Test123',
+  age: 20,
+  branch: 'CSE',
+  mark: 22
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd7120"),
+  name: 'Nency12',
+  age: 20,
+  branch: 'IT',
+  mark: 15
+}
+db.regex.find({name:{$regex:/^[A-Za-z]{4}[0-9]+$/}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711c"),
+  name: 'Test123',
+  age: 20,
+  branch: 'CSE',
+  mark: 22
+}
+db.regex.find({name:{$regex:/^(A|N)/}})
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711a"),
+  name: 'ABC',
+  age: 20,
+  branch: 'CSE',
+  mark: 20
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd711f"),
+  name: 'Ansh',
+  age: 19,
+  branch: 'CSE',
+  mark: 20
+}
+{
+  _id: ObjectId("6a4609b319ec2c9234dd7120"),
+  name: 'Nency12',
+  age: 20,
+  branch: 'IT',
+  mark: 15
+}
+
+
+db.regex.find({marks:{$gt:15}}).explain('executionStats')
+          '$gt': 15
+        }
+      },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 0,
+    executionTimeMillis: 0,
+    totalKeysExamined: 0,
+    totalDocsExamined: 8,
+    executionStages: {
+      stage: 'COLLSCAN',
+      filter: {
+        marks: {
+          '$gt': 15
+        }
+      },
+      nReturned: 0,
+      executionTimeMillisEstimate: 0,
+      works: 9,
+      advanced: 0,
+      needTime: 8,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 8
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      marks: {
+        '$gt': 15
+      }
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+db.regex.find({mark:{$gt:15}}).explain('executionStats')
+{
+      stage: 'COLLSCAN',
+      filter: {
+        mark: {
+          '$gt': 15
+        }
+      },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 5,
+    executionTimeMillis: 0,
+    totalKeysExamined: 0,
+    totalDocsExamined: 8,
+    executionStages: {
+      stage: 'COLLSCAN',
+      filter: {
+        mark: {
+          '$gt': 15
+        }
+      },
+      nReturned: 5,
+      executionTimeMillisEstimate: 0,
+      works: 9,
+      advanced: 5,
+      needTime: 3,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 8
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      mark: {
+        '$gt': 15
+      }
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+db.regex.createIndex({mark:-1})
+mark_-1
+db.regex.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { mark: -1 }, name: 'mark_-1' }
+]
+db.regex.createIndex({age:1})
+age_1
+db.regex.dropIndex('age_1')
+{ nIndexesWas: 3, ok: 1 }
+db.regex.getIndexes()
+[
+  { v: 2, key: { _id: 1 }, name: '_id_' },
+  { v: 2, key: { mark: -1 }, name: 'mark_-1' }
+]
+db.regex.find({mark:{$gt:15}}).explain('executionStats')
+{
+        works: 6,
+        advanced: 5,
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 1,
+        keyPattern: {
+          mark: -1
+        },
+        indexName: 'mark_-1',
+        isMultiKey: false,
+        multiKeyPaths: {
+          mark: []
+        },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: {
+          mark: [
+            '[inf.0, 15)'
+          ]
+        },
+        keysExamined: 5,
+        seeks: 1,
+        dupsTested: 0,
+        dupsDropped: 0
+      }
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      mark: {
+        '$gt': 15
+      }
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+db.regex.dropIndexes()
+{
+  nIndexesWas: 2,
+  msg: 'non-_id indexes dropped for collection',
+  ok: 1
+}
+db.regex.getIndexes()
+[ { v: 2, key: { _id: 1 }, name: '_id_' } ]
+db.regex.createIndex({age:1,name:-1})
+age_1_name_-1
+db.regex.find({name:'Test',age:21}).explain('executionStats')
+{
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 1,
+        keyPattern: {
+          age: 1,
+          name: -1
+        },
+        indexName: 'age_1_name_-1',
+        isMultiKey: false,
+        multiKeyPaths: {
+          age: [],
+          name: []
+        },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: {
+          age: [
+            '[21, 21]'
+          ],
+          name: [
+            '["Test", "Test"]'
+          ]
+        },
+        keysExamined: 1,
+        seeks: 1,
+        dupsTested: 0,
+        dupsDropped: 0
+      }
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      name: 'Test',
+      age: 21
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+db.regex.find({age:{$gt:20}}).explain('executionStats')
+{
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: {
+          age: [
+            '(20, inf.0]'
+          ],
+          name: [
+            '[MaxKey, MinKey]'
+          ]
+        },
+        keysExamined: 3,
+        seeks: 1,
+        dupsTested: 0,
+        dupsDropped: 0
+      }
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      age: {
+        '$gt': 20
+      }
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+db.regex.find({name:'Testing'}).explain('executionStats')
+{
+    totalDocsExamined: 8,
+    executionStages: {
+      stage: 'COLLSCAN',
+      filter: {
+        name: {
+          '$eq': 'Testing'
+        }
+      },
+      nReturned: 1,
+      executionTimeMillisEstimate: 0,
+      works: 9,
+      advanced: 1,
+      needTime: 7,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 8
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      name: 'Testing'
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+db.regex.createIndex({mark:1},{partialFilterExpression:{mark:{$gt:17}}})
+mark_1
+db.regex.find({mark:{$gt:18}}).explain('executionStats')
+{
+          mark: []
+        },
+        isUnique: false,
+        isSparse: false,
+        isPartial: true,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: {
+          mark: [
+            '(18, inf.0]'
+          ]
+        },
+        keysExamined: 4,
+        seeks: 1,
+        dupsTested: 0,
+        dupsDropped: 0
+      }
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      mark: {
+        '$gt': 18
+      }
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
+db.regex.find({mark:15}).explain('executionStats')
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'ljub2.regex',
+    indexFilterSet: false,
+    parsedQuery: {
+      mark: {
+        '$eq': 15
+      }
+    },
+    queryHash: '6CA5823E',
+    planCacheKey: '0C250272',
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    winningPlan: {
+      stage: 'COLLSCAN',
+      filter: {
+        mark: {
+          '$eq': 15
+        }
+      },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 2,
+    executionTimeMillis: 0,
+    totalKeysExamined: 0,
+    totalDocsExamined: 8,
+    executionStages: {
+      stage: 'COLLSCAN',
+      filter: {
+        mark: {
+          '$eq': 15
+        }
+      },
+      nReturned: 2,
+      executionTimeMillisEstimate: 0,
+      works: 9,
+      advanced: 2,
+      needTime: 6,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 8
+    }
+  },
+  command: {
+    find: 'regex',
+    filter: {
+      mark: 15
+    },
+    '$db': 'ljub2'
+  },
+  serverInfo: {
+    host: '406-1-30',
+    port: 27017,
+    version: '6.0.8',
+    gitVersion: '3d84c0dd4e5d99be0d69003652313e7eaf4cdd74'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600
+  },
+  ok: 1
+}
